@@ -7,6 +7,7 @@ from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split, GridSearchCV
 from skopt import BayesSearchCV
 from skopt.space import Real, Integer
+import time
 
 
 print("Random Forest Regressor Start: " + time.time())
