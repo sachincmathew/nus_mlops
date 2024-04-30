@@ -27,6 +27,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f Day3/GithubActions/requirements.txt ]; then pip install -r Day3/GithubActions/requirements.txt; fi
-    - name: Run python file
+    - name: Run model.py python file
       run: |
         python Day3/GithubActions/model.py
+    - name: Run randomForest.py python file
+      run: |
+        python Day3/GithubActions/randomForest.py
