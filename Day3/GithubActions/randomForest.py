@@ -10,7 +10,7 @@ from skopt.space import Real, Integer
 import time
 
 
-print("Random Forest Regressor Start: " + time.time())
+print("Random Forest Regressor Start: " + str(time.time()))
 
 # Load the Wine Quality dataset
 wine_data = load_wine()
@@ -22,11 +22,11 @@ df = pd.DataFrame(wine_data.data, columns=wine_data.feature_names)
 df["target"] = wine_data.target
 
 # Inspect the first few rows of the DataFrame
-df.head()
+#df.head()
 
 
 # Check the information about the dataset
-df.info()
+#df.info()
 
 # Separate features (X) and target variable (y)
 X = df.drop("target", axis=1)
@@ -46,7 +46,7 @@ scaler = StandardScaler()
 X_train[numerical_columns] = scaler.fit_transform(X_train[numerical_columns])
 X_test[numerical_columns] = scaler.fit_transform(X_test[numerical_columns])
 # Display the scaled dataset
-X_train
+#X_train
 
 
 
@@ -72,7 +72,7 @@ bayes_search = BayesSearchCV(
 bayes_search.fit(X_train, y_train)
 
 
-print("Random Forest Regressor End: " + time.time())
+print("Random Forest Regressor End: " + str(time.time()))
 
 # Best hyperparameters
 best_params = bayes_search.best_params_
