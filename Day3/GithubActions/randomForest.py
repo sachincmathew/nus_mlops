@@ -8,9 +8,10 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from skopt import BayesSearchCV
 from skopt.space import Real, Integer
 import time
+import datetime
 
 
-print("Random Forest Regressor Start: " + str(time.time()))
+print("Random Forest Regressor Start: " + datetime.datetime.fromtimestamp(time.time()).strftime("%H:%M:%S"))
 
 # Load the Wine Quality dataset
 wine_data = load_wine()
@@ -72,7 +73,7 @@ bayes_search = BayesSearchCV(
 bayes_search.fit(X_train, y_train)
 
 
-print("Random Forest Regressor End: " + str(time.time()))
+print("Random Forest Regressor End: " + datetime.datetime.fromtimestamp(time.time()).strftime("%H:%M:%S"))
 
 # Best hyperparameters
 best_params = bayes_search.best_params_
